@@ -1,8 +1,11 @@
 # https://help.github.com/en/actions/automating-your-workflow-with-github-actions/workflow-syntax-for-github-actions
 name: Deploy
 on:
-  release:
-    types: [published]
+  workflow_dispatch:
+# Manual only since 2026-11-12 (GitHub token incident). Triggers before:
+# on:
+#   release:
+#     types: [published]
 jobs:
   MAVEN_UPLOAD:
     name: Maven Upload
